@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قوانين سيرفر FiveM | CFW</title>
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #121212;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #f39c12;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tab-btn {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .tab-btn:hover {
+            background: #f39c12;
+        }
+        .tab-btn.active {
+            background: #e74c3c;
+        }
+        .rule-content {
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: auto;
+            display: none;
+        }
+        .rule-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .rule-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #2c3e50;
+            border-radius: 5px;
+        }
+        .rule-title {
+            color: #f1c40f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>قوانين سيرفر FiveM</h1>
+
+    <div class="tab-container">
+        <button class="tab-btn active" onclick="openTab('general')">القوانين العامة</button>
+        <button class="tab-btn" onclick="openTab('crime')">قوانين الجرائم</button>
+        <button class="tab-btn" onclick="openTab('jobs')">قوانين الوظائف</button>
+    </div>
+
+    <!-- القوانين العامة -->
+    <div id="general" class="rule-content active">
+        <div class="rule-item">
+            <div class="rule-title">المادة 1: الاحترام</div>
+            <p>ممنوع السب أو الشتائم أو التهديد تحت أي ظرف.</p>
+        </div>
+        <div class="rule-item">
+            <div class="rule-title">المادة 2: الغش</div>
+            <p>استخدام أي برنامج غير مصرح به (مثل Mod Menu) يؤدي إلى حظر دائم.</p>
+        </div>
+    </div>
+
+    <!-- قوانين الجرائم -->
+    <div id="crime" class="rule-content">
+        <div class="rule-item">
+            <div class="rule-title">المادة 1: السرقة</div>
+            <p>يجب أن يكون هناك تفاعل صحيح (RolePlay) قبل سرقة أي لاعب.</p>
+        </div>
+        <div class="rule-item">
+            <div class="rule-title">المادة 2: القتل (RDM)</div>
+            <p>القتل العشوائي بدون سبب مقنع يؤدي إلى عقوبة تصل إلى الحظر.</p>
+        </div>
+    </div>
+
+    <!-- قوانين الوظائف -->
+    <div id="jobs" class="rule-content">
+        <div class="rule-item">
+            <div class="rule-title">المادة 1: الشرطة</div>
+            <p>يجب على الضباط اتباع الإجراءات القانونية وعدم استعمال القوة إلا عند الضرورة.</p>
+        </div>
+        <div class="rule-item">
+            <div class="rule-title">المادة 2: المجرمين</div>
+            <p>يُمنع الهجوم على الأماكن الحكومية بدون تخطيط وتفاعل واقعي.</p>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabId) {
+            // إخفاء كل المحتويات
+            document.querySelectorAll('.rule-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // إزالة التنشيط من كل الأزرار
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // إظهار المحتوى المحدد وتنشيط الزر
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
